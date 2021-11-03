@@ -11,19 +11,19 @@
         AbstractCar Create();
     }
 
-    public class ConcreateFactoryA:IFactoryMethod
+    public class ConcreteFactoryA:IFactoryMethod
     {
         public AbstractCar Create()
         {
-            return new ConcreateCarA();
+            return new ConcreteCarA();
         }
     }
 
-    public class ConcreateFactoryB : IFactoryMethod
+    public class ConcreteFactoryB : IFactoryMethod
     {
         public AbstractCar Create()
         {
-            return new ConcreateCarB();
+            return new ConcreteCarB();
         }
     }
 }

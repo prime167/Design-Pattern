@@ -24,12 +24,12 @@ namespace FactoryPattern
     {
         public AbstractCar CreateCar()
         {
-            return new ConcreateCarA();
+            return new ConcreteCarA();
         }
 
         public AbstractBus CreateBus()
         {
-            return new ConcreateBusA();
+            return new ConcreteBusA();
         }
     }
 
@@ -40,12 +40,12 @@ namespace FactoryPattern
     {
         public AbstractCar CreateCar()
         {
-            return new ConcreateCarB();
+            return new ConcreteCarB();
         }
 
         public AbstractBus CreateBus()
         {
-            return new ConcreateBusB();
+            return new ConcreteBusB();
         }
     }
 }

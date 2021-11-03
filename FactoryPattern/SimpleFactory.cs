@@ -5,8 +5,8 @@
     /// </summary>
     public enum ProductEnum
     {
-        ConcreateProductA,
-        ConcreateProductB
+        ConcreteProductA,
+        ConcreteProductB
     }
 
     /// <summary>
@@ -21,10 +21,10 @@
         {
             switch (productType)
             {
-                case ProductEnum.ConcreateProductA:
-                    return new ConcreateCarA();
-                case ProductEnum.ConcreateProductB:
-                    return new ConcreateCarB();
+                case ProductEnum.ConcreteProductA:
+                    return new ConcreteCarA();
+                case ProductEnum.ConcreteProductB:
+                    return new ConcreteCarB();
                 default:
                     return null;
             }

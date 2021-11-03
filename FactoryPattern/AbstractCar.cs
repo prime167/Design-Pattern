@@ -12,11 +12,11 @@ namespace FactoryPattern
 
         public void GetInfo()
         {
-            Console.WriteLine(string.Format("I am {0}.",this.GetType().Name));
+            Console.WriteLine($"I am {this.GetType().Name}.");
         }
     }
 
-    public class ConcreateCarA : AbstractCar
+    public class ConcreteCarA : AbstractCar
     {
 
         protected override void DoOperation()
@@ -26,7 +26,7 @@ namespace FactoryPattern
         }
     }
 
-    public class ConcreateCarB : AbstractCar
+    public class ConcreteCarB : AbstractCar
     {
         protected override void DoOperation()
         {

@@ -8,11 +8,11 @@ namespace FactoryPattern
 
         public void GetInfo()
         {
-            Console.WriteLine(string.Format("I am {0}.",this.GetType().Name));
+            Console.WriteLine($"I am {this.GetType().Name}.");
         }
     }
 
-    public class ConcreateBusA : AbstractBus
+    public class ConcreteBusA : AbstractBus
     {
 
         protected override void DoOperation()
@@ -22,7 +22,7 @@ namespace FactoryPattern
         }
     }
 
-    public class ConcreateBusB : AbstractBus
+    public class ConcreteBusB : AbstractBus
     {
         protected override void DoOperation()
         {
