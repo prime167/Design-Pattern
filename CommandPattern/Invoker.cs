@@ -28,7 +28,7 @@ namespace CommandPattern
         /// </summary>
         public void Invoke()
         {
-            Console.WriteLine(string.Format("『{0}』下达命令：{1}", this.InovkerName, this.command.CommandName));
+            Console.WriteLine("『{0}』下达命令：{1}", this.InovkerName, this.command.CommandName);
             this.command.Execute();
         }
     }
@@ -146,12 +146,12 @@ namespace CommandPattern
         }
         public override void Plan()
         {
-            Console.WriteLine(string.Format("{0}:制定作战计划。", this.ReceiverName));
+            Console.WriteLine("{0}:制定作战计划。", this.ReceiverName);
         }
 
         public override void Action()
         {
-            Console.WriteLine(string.Format("{0}:海陆空按照即定作战计划作战，收复台湾！", this.ReceiverName));
+            Console.WriteLine("{0}:海陆空按照即定作战计划作战，收复台湾！", this.ReceiverName);
         }
     }
 
@@ -166,12 +166,12 @@ namespace CommandPattern
         }
         public override void Plan()
         {
-            Console.WriteLine(string.Format("{0}:制定谈判计划。", this.ReceiverName));
+            Console.WriteLine("{0}:制定谈判计划。", this.ReceiverName);
         }
 
         public override void Action()
         {
-            Console.WriteLine(string.Format("{0}:落实谈判结果，收复台湾！", this.ReceiverName));
+            Console.WriteLine("{0}:落实谈判结果，收复台湾！", this.ReceiverName);
         }
     }
 

@@ -32,7 +32,7 @@ namespace SingletonPattern
 
         public void GetInfo()
         {
-            Console.WriteLine(string.Format("I am {0}.", this.GetType().Name));
+            Console.WriteLine("I am {0}.", this.GetType().Name);
         }
 
     }

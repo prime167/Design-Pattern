@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChainOfResponsibility
 {
@@ -53,12 +50,12 @@ namespace ChainOfResponsibility
 
     public class Purchaser : BillHandler
     {
-        private List<string> permissions = new List<string>() { "SAVE" };
+        private readonly List<string> _permissions = new List<string>() { "SAVE" };
 
         public Purchaser(string username)
         {
             base.UserName = username;
-            base.Permissions = permissions;
+            base.Permissions = _permissions;
             base.Successor = new Manager("经理--任经理");//在构造函数中指定下一个处理者
         }
 
@@ -67,13 +64,13 @@ namespace ChainOfResponsibility
             if (CheckPermission("SAVE") && bill.Status == BillStatus.Open)
             {
                 bill.Status = BillStatus.Saved;
-                Console.WriteLine(string.Format("{0}：{1}已经保存！", this.UserName, bill.BilNo));
+                Console.WriteLine($"{this.UserName}：{bill.BilNo}已经保存！");
             }
 
             if (CheckPermission("SUBMIT") && bill.Status == BillStatus.Saved)
             {
                 bill.Status = BillStatus.Submitted;
-                Console.WriteLine(string.Format("{0}：{1}已经提交！", this.UserName, bill.BilNo));
+                Console.WriteLine($"{this.UserName}：{bill.BilNo}已经提交！");
             }
 
             if (CheckPermission("AUDIT") && bill.Status == BillStatus.Submitted)
@@ -81,13 +78,12 @@ namespace ChainOfResponsibility
                 if (bill.Amount <= 5000)
                 {
                     bill.Status = BillStatus.Submitted;
-                    Console.WriteLine(string.Format("{0}：{1}已经审核！", this.UserName, bill.BilNo));
+                    Console.WriteLine($"{this.UserName}：{bill.BilNo}已经审核！");
                 }
                 else
                 {
                     this.Successor.DoBillOperation(bill);
                 }
-
             }
             else
             {
@@ -98,12 +94,12 @@ namespace ChainOfResponsibility
 
     public class Manager : BillHandler
     {
-        private List<string> permissions = new List<string>() { "SAVE", "SUBMIT", "AUDIT" };
+        private readonly List<string> _permissions = new List<string>() { "SAVE", "SUBMIT", "AUDIT" };
 
         public Manager(string userName)
         {
             base.UserName = userName;
-            base.Permissions = permissions;
+            base.Permissions = _permissions;
             base.Successor = new CEO("CEO--链总");
         }
 
@@ -112,13 +108,13 @@ namespace ChainOfResponsibility
             if (CheckPermission("SAVE") && bill.Status == BillStatus.Open)
             {
                 bill.Status = BillStatus.Saved;
-                Console.WriteLine(string.Format("{0}：{1}已经保存！", this.UserName, bill.BilNo));
+                Console.WriteLine($"{this.UserName}：{bill.BilNo}已经保存！");
             }
 
             if (CheckPermission("SUBMIT") && bill.Status == BillStatus.Saved)
             {
                 bill.Status = BillStatus.Submitted;
-                Console.WriteLine(string.Format("{0}：{1}已经提交！", this.UserName, bill.BilNo));
+                Console.WriteLine($"{this.UserName}：{bill.BilNo}已经提交！");
             }
 
             if (CheckPermission("AUDIT") && bill.Status == BillStatus.Submitted)
@@ -126,7 +122,7 @@ namespace ChainOfResponsibility
                 if (bill.Amount <= 20000)
                 {
                     bill.Status = BillStatus.Submitted;
-                    Console.WriteLine(string.Format("{0}：{1}已经审核！", this.UserName, bill.BilNo));
+                    Console.WriteLine($"{this.UserName}：{bill.BilNo}已经审核！");
                 }
                 else
                 {
@@ -143,12 +139,12 @@ namespace ChainOfResponsibility
 
     public class CEO : BillHandler
     {
-        private List<string> permissions = new List<string>() { "SAVE", "SUBMIT", "AUDIT" };
+        private readonly List<string> _permissions = new List<string>() { "SAVE", "SUBMIT", "AUDIT" };
 
         public CEO(string userName)
         {
             base.UserName = userName;
-            base.Permissions = permissions;
+            base.Permissions = _permissions;
         }
 
         public override void DoBillOperation(Bill bill)
@@ -156,19 +152,19 @@ namespace ChainOfResponsibility
             if (CheckPermission("SAVE") && bill.Status == BillStatus.Open)
             {
                 bill.Status = BillStatus.Saved;
-                Console.WriteLine(string.Format("{0}：{1}已经保存！", this.UserName, bill.BilNo));
+                Console.WriteLine("{0}：{1}已经保存！", this.UserName, bill.BilNo);
             }
 
             if (CheckPermission("SUBMIT") && bill.Status == BillStatus.Saved)
             {
                 bill.Status = BillStatus.Submitted;
-                Console.WriteLine(string.Format("{0}：{1}已经提交！", this.UserName, bill.BilNo));
+                Console.WriteLine("{0}：{1}已经提交！", this.UserName, bill.BilNo);
             }
 
             if (CheckPermission("AUDIT") && bill.Status == BillStatus.Submitted)
             {
                 bill.Status = BillStatus.Submitted;
-                Console.WriteLine(string.Format("{0}：{1}已经审核！", this.UserName, bill.BilNo));
+                Console.WriteLine("{0}：{1}已经审核！", this.UserName, bill.BilNo);
             }
         }
     }    

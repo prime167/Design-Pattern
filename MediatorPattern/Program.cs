@@ -25,7 +25,7 @@ namespace MediatorPattern
             int initRequirement = mediator.GetBuyRequirement();
             int initHousenum = mediator.GetCurrentHouseNumber();
 
-            Console.WriteLine(string.Format("目前购房需求为：{0}套;现有房源：{1}套。", initRequirement, initHousenum));
+            Console.WriteLine("目前购房需求为：{0}套;现有房源：{1}套。", initRequirement, initHousenum);
 
             //买房300套
             buyer.BuyHouse(300);

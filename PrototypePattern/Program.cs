@@ -34,7 +34,7 @@ namespace PrototypePattern
 
         private static void SendEmail(Email email)
         {
-            Console.WriteLine(string.Format("邮件已发送至：『{0}』", email.Receiver));
+            Console.WriteLine("邮件已发送至：『{0}』", email.Receiver);
         }
     }
 }

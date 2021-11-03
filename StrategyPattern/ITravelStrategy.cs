@@ -35,7 +35,7 @@ namespace StrategyPattern
         public override void TravelPlan()
         {
             Console.WriteLine("广西旅游计划：");
-            Console.WriteLine(string.Format("计划名称：{0}预算：{1}", this.PlanName, this.Budget));
+            Console.WriteLine("计划名称：{0}预算：{1}", this.PlanName, this.Budget);
             if (this.Budget >= 4000)
             {
                 Console.WriteLine("选择高铁出行！");
@@ -56,7 +56,7 @@ namespace StrategyPattern
         public override void TravelPlan()
         {
             Console.WriteLine("备用计划：");
-            Console.WriteLine(string.Format("计划名称：{0}", this.PlanName));
+            Console.WriteLine("计划名称：{0}", this.PlanName);
         }
     }
 }

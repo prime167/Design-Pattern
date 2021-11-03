@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ChainOfResponsibility
+﻿namespace ChainOfResponsibility
 {
     /// <summary>
     /// 单据状态枚举
@@ -31,13 +25,7 @@ namespace ChainOfResponsibility
 
         public decimal Price { get; set; }
 
-        public decimal Amount
-        {
-            get
-            {
-                return Qty * Price;
-            }
-        }
+        public decimal Amount => Qty * Price;
 
         /// <summary>
         /// 做单员
@@ -53,7 +41,4 @@ namespace ChainOfResponsibility
             base.BillName = "采购申请单";
         }
     }
-
-   
-
 }

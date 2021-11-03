@@ -24,7 +24,7 @@ namespace ProxyPattern
 
             if (response != null)
             {
-                Console.WriteLine(string.Format("搜索【{0}】并成功返回！", searchStr));
+                Console.WriteLine("搜索【{0}】并成功返回！", searchStr);
             }
         }
     }
@@ -55,7 +55,7 @@ namespace ProxyPattern
 
                     if (response != null)
                     {
-                        Console.WriteLine(string.Format("搜索【{0}】并成功返回！", searchStr));
+                        Console.WriteLine("搜索【{0}】并成功返回！", searchStr);
                     }
                 }
                 catch (Exception ex)

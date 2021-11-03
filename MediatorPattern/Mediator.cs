@@ -56,7 +56,7 @@ namespace MediatorPattern
         public void SignAgreement(int num)
         {
             requirement -= num;
-            Console.WriteLine(string.Format("{0}成功购房{1}套", name, num));
+            Console.WriteLine("{0}成功购房{1}套", name, num);
         }
 
         public int GetRequirement()

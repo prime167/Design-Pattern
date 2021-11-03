@@ -42,7 +42,7 @@ namespace DecoratorPattern
         /// </summary>
         public override void Show()
         {
-            Console.WriteLine(string.Format("该户型为{0}㎡，户型设计为{1}，目前均价为{2}元/㎡。", this.Area, this.Specification, this.Price));
+            Console.WriteLine("该户型为{0}㎡，户型设计为{1}，目前均价为{2}元/㎡。", this.Area, this.Specification, this.Price);
         }
     }
 }

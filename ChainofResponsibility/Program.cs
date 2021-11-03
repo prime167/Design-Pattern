@@ -21,7 +21,7 @@ namespace ChainOfResponsibility
                 //BillMaker = new CEO("CEO--链总")
             };
 
-            Console.WriteLine(string.Format("创建采购申请单：{0};申请购买{1}台{2}", bill.BilNo, bill.Qty, bill.MaterialName));
+            Console.WriteLine("创建采购申请单：{0};申请购买{1}台{2}", bill.BilNo, bill.Qty, bill.MaterialName);
 
             bill.BillMaker.HandleBill(bill);
 
