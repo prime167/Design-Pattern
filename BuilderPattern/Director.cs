@@ -49,7 +49,7 @@ namespace BuilderPattern
     /// <summary>
     /// 惠普电脑组装商
     /// </summary>
-    public class HpBulider : Builder
+    public class HpBuilder : Builder
     {
         Computer hp = new Computer() { Band = "惠普" };
 
@@ -84,7 +84,7 @@ namespace BuilderPattern
     /// <summary>
     /// 戴尔电脑组装商
     /// </summary>
-    public class DellBulider : Builder
+    public class DellBuilder : Builder
     {
         Computer dell = new Computer() { Band = "戴尔" };
 
