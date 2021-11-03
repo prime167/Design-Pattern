@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BuilderPattern
 {
@@ -18,13 +14,11 @@ namespace BuilderPattern
             Computer hp =director.Construct(hpBuilder);
             hp.ShowSteps();
 
-            Console.ReadLine();
+            Console.WriteLine();
 
             //组装一批戴尔电脑
             Computer dell = director.Construct(dellBuilder);
             dell.ShowSteps();
-
-            Console.ReadLine();
         }
     }
 }
