@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProxyPattern
 {
@@ -24,8 +20,6 @@ namespace ProxyPattern
             Console.WriteLine("使用代理访问Google：");
             ISearchEngine searchEngine = new GoogleProxy();
             searchEngine.Search("特朗普");
-
-            Console.ReadLine();
         }
     }
 }
